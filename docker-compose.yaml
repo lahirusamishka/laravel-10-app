@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  app:
+    image: app
+    container_name: app
+    build: 
+      context: .
+      dockerfile: ./dockerfiles/app.dockerfile
+    volumes:
+      - ./src:/var/www/html/
+    env_file:
+      - ./env/app.env
+  static:
+    image: nginx:1.19.6-alpine
+    volumes:
+    - ./src/public:/usr/share/nginx/html/
+  proxy:
+    image: proxy
+    build:
+      context: .
+      dockerfile: ./dockerfiles/proxy.dockerfile
+    ports:
+      - 9000:80
+    env_file:
+      - ./env/proxy.env
+  mysql:
+    platform: linux/x86_64
+    image: mysql:5.7
+    container_name: mysql
+    env_file:
+      - ./env/mysql.env
+    ports:
+      - "6033:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  phpmyadmin:
+    platform: linux/x86_64
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+volumes:
+  db-data:
