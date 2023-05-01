@@ -2,6 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
+       
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -11,7 +12,9 @@
                 {{ session('status') }}
             </div>
         @endif
-
+            <h1 class="text-xl py-6 font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+                Sign in to your account
+            </h1>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -26,23 +29,38 @@
             </div>
 
             <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+           
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <label for="remember_me" class="flex items-center">
+                        <x-checkbox id="remember_me" name="remember" />
+                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    </label>
+                </div>
+                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
+            </div>
+            <div class="flex items-center justify-end mt-4">
+               
 
-                <x-button class="ml-4">
+     
+            </div>
+                     
+            <div class="flex items-center justify-end mt-4">
+                <x-button >
                     {{ __('Log in') }}
                 </x-button>
+                {{-- <button type="submit" class="w-full bg-gray-800 text-white hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Email Password Reset Link</button>            </div>
+               --}}
             </div>
+            <p class="text-sm py-6 font-light text-gray-500 dark:text-gray-400">
+                Don’t have an account yet? <a href="{{ route('register') }}" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Sign up</a>
+            </p> 
+            
         </form>
     </x-authentication-card>
 </x-guest-layout>

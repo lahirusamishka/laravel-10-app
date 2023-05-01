@@ -19,10 +19,10 @@
         <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"><a
                     class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-                    href="#/">Nexa Code</a><button
+                    href="#/">Nexa Code</a><button id="toggleBtn"
                     class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                     type="button"><i class="fas fa-bars"></i></button></div>
-            <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden"
+            <div id="targetDiv" class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden"
                 id="example-navbar-warning">
                 {{-- <ul class="flex flex-col lg:flex-row list-none mr-auto">
                     <li class="flex items-center"><a
@@ -119,13 +119,11 @@
                         <div class="container relative mx-auto">
                             <div class="items-center flex flex-wrap">
                                 <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                                    <div class="pr-12">
                                         <h1 class="text-white font-semibold text-5xl">Your story starts with us.</h1>
                                         <p class="mt-4 text-lg text-slate-200">Lorem ipsum dolor sit amet, consectetur
                                             adipisicing elit. Sit aliquam, animi amet vel mollitia aspernatur in
                                             laboriosam nihil modi rem. Accusamus animi doloribus at obcaecati suscipit
                                             eos hic! Animi, blanditiis.</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -547,4 +545,12 @@
         </div>
     </div>
 </body>
+<script>
+    const toggleBtn = document.querySelector('#toggleBtn');
+    const targetDiv = document.querySelector('#targetDiv');
+    
+    toggleBtn.addEventListener('click', () => {
+      targetDiv.classList.toggle('hidden');
+    });
+  </script>
 </html>

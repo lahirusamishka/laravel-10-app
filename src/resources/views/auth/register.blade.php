@@ -5,7 +5,9 @@
         </x-slot>
 
         <x-validation-errors class="mb-4" />
-
+        <h1 class="text-xl py-6 font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+            Register your account
+        </h1>
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
@@ -47,14 +49,19 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                {{-- <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
-                </a>
+                </a> --}}
 
-                <x-button class="ml-4">
+                <x-button>
                     {{ __('Register') }}
                 </x-button>
             </div>
+            <p class="text-sm py-6 font-light text-gray-500 dark:text-gray-400">
+                Already registered? <a class="font-medium text-blue-600 hover:underline dark:text-blue-500 font-bold" href="{{ route('login') }}">
+                    {{ __('Log in') }}
+                </a>
+            </p> 
         </form>
     </x-authentication-card>
 </x-guest-layout>
