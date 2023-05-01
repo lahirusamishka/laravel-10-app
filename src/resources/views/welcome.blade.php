@@ -67,18 +67,18 @@
 
                     @auth
                     <li class="flex items-center"><a
-                            class="bg-lightBlue-500  active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            href="{{ url('/dashboard') }}"><i class="fas fa-arrow-alt-circle-down"></i> Dashboard</a>
+                            class="bg-blue-400 hover:bg-blue-70 text-white  active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                            href="{{ url('/dashboard') }}"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
                     </li>
                     @else
                     <li class="flex items-center"><a
-                            class="bg-lightBlue-500  active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            href="{{ route('login') }}"><i class="fas fa-arrow-alt-circle-down"></i> Log in</a></li>
+                            class="bg-blue-400 hover:bg-blue-70 text-white  active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                            href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"></i> Log in</a></li>
 
                     @if (Route::has('register'))
                     <li class="flex items-center"><a
-                            class="bg-lightBlue-500  active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            href="{{ route('register') }}"><i class="fas fa-arrow-alt-circle-down"></i> Register</a>
+                            class="bg-blue-400 hover:bg-blue-70 text-white  active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                            href="{{ route('register') }}"><i class="fa-solid fa-user-plus"></i> Register</a>
                     </li>
                     @endif
                     @endauth
