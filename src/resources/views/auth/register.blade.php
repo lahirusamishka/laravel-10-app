@@ -58,7 +58,7 @@
                 </x-button>
             </div>
             <p class="text-sm py-6 font-light text-gray-500 dark:text-gray-400">
-                Already registered? <a class="font-medium text-blue-600 hover:underline dark:text-blue-500 font-bold" href="{{ route('login') }}">
+                Already registered? <a class="text-blue-600 hover:underline dark:text-blue-500 font-bold" href="{{ route('login') }}">
                     {{ __('Log in') }}
                 </a>
             </p> 
