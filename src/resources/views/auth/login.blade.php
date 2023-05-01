@@ -4,13 +4,14 @@
             <x-authentication-card-logo />
        
         </x-slot>
-
+  
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
             </div>
+         
         @endif
             <h1 class="text-xl py-6 font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                 Sign in to your account

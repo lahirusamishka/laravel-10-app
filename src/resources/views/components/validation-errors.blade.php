@@ -1,4 +1,4 @@
-@if ($errors->any())
+{{-- @if ($errors->any())
     <div {{ $attributes }}>
         <div class="font-medium text-red-600">{{ __('Whoops! Something went wrong.') }}</div>
 
@@ -7,5 +7,14 @@
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
+    </div>
+@endif --}}
+
+@if ($errors->any())
+    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+        <p class="font-bold">Something went wrong.</p>
+        @foreach ($errors->all() as $error)
+        <p>{{ $error }}</p>
+        @endforeach
     </div>
 @endif
