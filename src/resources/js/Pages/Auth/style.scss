@@ -1,0 +1,11 @@
+.form-page{
+	@apply .bg-gray-900 .min-h-screen .flex .justify-center .items-center .py-16;
+}
+
+.rounded-form{
+	@apply .bg-white .rounded-lg .shadow-xl .overflow-hidden
+}
+
+.form-bottom{
+	@apply .px-10 .py-4 .bg-gray-100 .border-t .border-gray-200 .flex .justify-between .items-center;
+}

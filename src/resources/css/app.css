@@ -1,0 +1,11 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Utilities */
+@import 'tailwindcss/utilities';
+
+@import "icons";
+.btn-gray {
+	@apply px-6 py-3 rounded bg-gray-700 text-white text-sm font-bold whitespace-no-wrap;
+}

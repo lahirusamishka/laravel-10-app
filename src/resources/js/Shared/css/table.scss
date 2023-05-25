@@ -1,0 +1,32 @@
+
+
+.top-slot{
+	@apply .mb-6 .flex .justify-between .items-center;
+}
+
+.table-container{
+	@apply .bg-white .rounded .shadow .overflow-x-auto;
+}
+
+.index-table{
+	@apply .w-full .whitespace-no-wrap;
+}
+
+.table-head{
+	@apply .text-left .font-bold;
+}
+.table-head-cell{
+	@apply .cursor-pointer .px-6 .pt-5 .pb-4;
+}
+.table-head-cell-active{
+	@apply .text-orange-600;
+}
+.table-row{
+	@apply .cursor-pointer .text-gray-700;
+	&:hover{
+		@apply .text-black .bg-gray-100;
+	}
+}
+.table-cell{
+	@apply .px-6 .py-4 .flex .items-center;
+}
